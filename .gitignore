@@ -1,0 +1,19 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+*.lock
+*.ide
+*.ide-shm
+*.ide-wal
+*.suo
+*.exe
+/ConsoleUI/bin/Debug
+*.pdb
+*.dll
+/ConsoleUI/bin/Release
+*.CopyComplete
+*.cache
+/ConsoleUI/obj
+*.DotSettings
+/DSLib/obj
