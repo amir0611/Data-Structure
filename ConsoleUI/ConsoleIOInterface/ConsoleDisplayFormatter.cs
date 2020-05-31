@@ -2,7 +2,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 
-namespace ConsoleUI
+namespace ConsoleUI.ConsoleIOInterface
 {
     /// <summary>
     /// Provides utility methods to format the console output display.

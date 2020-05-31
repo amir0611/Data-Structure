@@ -1,4 +1,5 @@
 ﻿using System;
+using DSLib.DataStructures;
 
 namespace DSLib
 {

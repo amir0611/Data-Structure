@@ -1,4 +1,7 @@
-﻿using DSLib;
+﻿using ConsoleUI.ConsoleIOInterface;
+using ConsoleUI.Operators;
+using DSLib;
+using DSLib.DataStructures;
 
 namespace ConsoleUI
 {
@@ -6,12 +9,15 @@ namespace ConsoleUI
     {
         internal static void Main()
         {
-            IApplication application = 
-                new ConsoleApplication(
-                    new ConsoleInputReader(new DsAndOperationMapper()),
-                    new DsContext<string>(), 
-                    new ConsoleOutputHandler());
-            
+            var userInterface = new ConsoleBasedUI();
+            IApplication application =
+                new DataStructureApplication<string>(
+                    new ConsoleMenuPrinter(),
+                    userInterface,
+                    new DataStructureFactory<string>(),
+                    new OperatorFactory<string>(userInterface),
+                    new DsAndOperationMapper());
+
             application.Run();
         }
     }

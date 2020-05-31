@@ -1,7 +1,7 @@
 ﻿namespace DSLib
 {
-    public interface IHandleOutput
+    public interface IHandleOutput<in TOutput>
     {
-        void HandleOutput(DataStructureTypes selectedDataStructure, dynamic operation, dynamic output);
+        void HandleOutput(TOutput output);
     }
 }

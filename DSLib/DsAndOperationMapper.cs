@@ -1,50 +1,49 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
 
 namespace DSLib
 {
     public sealed class DsAndOperationMapper : IMapDsAndOperations
     {
-        private readonly IDictionary<DataStructureTypes, IEnumerable<dynamic>> dsAndOperationsMap =
-            new Dictionary<DataStructureTypes, IEnumerable<dynamic>>
+        private readonly IDictionary<DataStructureTypes, Type> dsAndOperationsMap =
+            new Dictionary<DataStructureTypes, Type>
             {
                 {
                     DataStructureTypes.Array,
-                    Enum.GetNames(typeof(ArrayOperations))
+                    typeof(ArrayOperations)
                 },
                 {
                     DataStructureTypes.SinglyLinkedList,
-                    Enum.GetNames(typeof(LinkedListOperations))
+                    typeof(LinkedListOperations)
                 },
                 {
                     DataStructureTypes.DoublyLinkedList,
-                    Enum.GetNames(typeof(LinkedListOperations))
+                    typeof(LinkedListOperations)
                 },
                 {
                     DataStructureTypes.CircularLinkedList,
-                    Enum.GetNames(typeof(LinkedListOperations))
+                    typeof(LinkedListOperations)
                 },
                 {
                     DataStructureTypes.Stack,
-                    Enum.GetNames(typeof(StackOperations))
+                    typeof(StackOperations)
                 },
                 {
                     DataStructureTypes.Queue,
-                    Enum.GetNames(typeof(QueueOperations))
+                    typeof(QueueOperations)
                 },
                 {
                     DataStructureTypes.Graph,
-                    Enum.GetNames(typeof(GraphOperations))
+                    typeof(GraphOperations)
                 },
                 {
                     DataStructureTypes.Tree,
-                    Enum.GetNames(typeof(TreeOperations))
+                    typeof(TreeOperations)
                 }
             };
 
-        public IEnumerable<dynamic> GetOperations(DataStructureTypes dataStructure)
+        public Type GetOperationType(DataStructureTypes dataStructure)
         {
             if (!Enum.IsDefined(typeof(DataStructureTypes), dataStructure))
             {
@@ -52,9 +51,7 @@ namespace DSLib
                     typeof(DataStructureTypes));
             }
 
-            return dsAndOperationsMap.ContainsKey(dataStructure)
-                ? dsAndOperationsMap[dataStructure]
-                : Enumerable.Empty<dynamic>();
+            return dsAndOperationsMap[dataStructure];
         }
     }
 }

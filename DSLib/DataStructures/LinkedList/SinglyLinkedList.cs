@@ -1,23 +1,27 @@
 ﻿using System.Collections.Generic;
 
-namespace DSLib
+namespace DSLib.DataStructures
 {
-    public sealed class SinglyLinkedList<TData> : Node<TData>
+    public sealed class SinglyLinkedList<TDataType> : IDataStructure<TDataType>
     {
-        private SinglyLinkedListNode<TData> head;
-        private SinglyLinkedListNode<TData> current;
+        private SinglyLinkedListNode<TDataType> head;
+        private SinglyLinkedListNode<TDataType> current;
 
-        public void Create(IEnumerable<TData> data)
+        public bool Create(IEnumerable<TDataType> data)
         {
-            foreach (TData item in data)
+            var created = false;
+
+            foreach (TDataType item in data)
             {
-                InsertAtLast(item);
+                created = InsertAtLast(item);
             }
+
+            return created;
         }
 
-        public IEnumerable<TData> Traverse()
+        public IEnumerable<TDataType> Traverse()
         {
-            var data = new List<TData>();
+            var data = new List<TDataType>();
 
             current = head;
 
@@ -31,7 +35,7 @@ namespace DSLib
             return data;
         }
 
-        public bool Find(TData element)
+        public bool Find(TDataType element)
         {
             current = head;
 
@@ -48,9 +52,9 @@ namespace DSLib
             return false;
         }
 
-        public bool InsertAtFront(TData element)
+        public bool InsertAtFront(TDataType element)
         {
-            var newNode = new SinglyLinkedListNode<TData> { Value = element, NextNode = null };
+            var newNode = new SinglyLinkedListNode<TDataType> { Value = element, NextNode = null };
 
             // Handle 1st element of list.
             if (head == null)
@@ -65,9 +69,9 @@ namespace DSLib
             return true;
         }
 
-        public bool InsertAtLast(TData element)
+        public bool InsertAtLast(TDataType element)
         {
-            var newNode = new SinglyLinkedListNode<TData> {Value = element, NextNode = null};
+            var newNode = new SinglyLinkedListNode<TDataType> {Value = element, NextNode = null};
 
             // Handle 1st element of list.
             if (head == null)
@@ -86,9 +90,9 @@ namespace DSLib
             return true;
         }
 
-        public bool InsertAfter(TData newElement, TData existingElement)
+        public bool InsertAfter(TDataType newElement, TDataType existingElement)
         {
-            var newNode = new SinglyLinkedListNode<TData> { Value = newElement, NextNode = null };
+            var newNode = new SinglyLinkedListNode<TDataType> { Value = newElement, NextNode = null };
 
             current = head;
 
@@ -107,7 +111,7 @@ namespace DSLib
             return false;
         }
 
-        public bool InsertBefore(TData newElement, TData existingElement)
+        public bool InsertBefore(TDataType newElement, TDataType existingElement)
         {
             return false;
         }
@@ -122,7 +126,7 @@ namespace DSLib
             throw new System.NotImplementedException();
         }
 
-        public bool DeleteSpecific(TData element)
+        public bool DeleteSpecific(TDataType element)
         {
             throw new System.NotImplementedException();
         }
