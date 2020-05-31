@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
 
 namespace DSLib
 {
     public interface IMapDsAndOperations
     {
-        IEnumerable<dynamic> GetOperations(DataStructureTypes dataStructure);
+        Type GetOperationType(DataStructureTypes dataStructure);
     }
 }
