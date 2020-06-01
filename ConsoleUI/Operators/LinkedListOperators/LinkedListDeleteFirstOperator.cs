@@ -12,7 +12,9 @@ namespace ConsoleUI.Operators
 
         public void Operate()
         {
-            
+            bool output = dataStructure.DeleteFirst();
+
+            userInterface.DisplayResultMessage(output, "First Node Deleted.", "First node deletion Failed.");
         }
     }
 }

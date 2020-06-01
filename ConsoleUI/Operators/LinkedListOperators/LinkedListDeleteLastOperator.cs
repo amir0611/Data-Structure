@@ -12,7 +12,9 @@ namespace ConsoleUI.Operators
 
         public void Operate()
         {
-            
+            bool output = dataStructure.DeleteLast();
+
+            userInterface.DisplayResultMessage(output, "Last Node Deleted.", "Last node deletion Failed.");
         }
     }
 }
