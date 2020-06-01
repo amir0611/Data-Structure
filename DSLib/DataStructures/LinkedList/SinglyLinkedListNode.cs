@@ -1,8 +1,11 @@
 ﻿namespace DSLib.DataStructures
 {
-    public sealed class SinglyLinkedListNode<TData>
+    public sealed class SinglyLinkedListNode<TDataType> : BaseNode<TDataType>
     {
-        public TData Value { get; set; }
-        public SinglyLinkedListNode<TData> NextNode { get; set; }
+        public SinglyLinkedListNode<TDataType> NextNode { get; set; }
+
+        public SinglyLinkedListNode(TDataType data) : base(data)
+        {
+        }
     }
 }

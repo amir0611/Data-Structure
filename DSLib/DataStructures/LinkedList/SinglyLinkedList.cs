@@ -27,7 +27,7 @@ namespace DSLib.DataStructures
 
             while (current != null)
             {
-                data.Add(current.Value);
+                data.Add(current.Data);
 
                 current = current.NextNode;
             }
@@ -41,7 +41,7 @@ namespace DSLib.DataStructures
 
             while (current != null)
             {
-                if (current.Value.Equals(element))
+                if (current.Data.Equals(element))
                 {
                     return true;
                 }
@@ -54,7 +54,7 @@ namespace DSLib.DataStructures
 
         public bool InsertAtFront(TDataType element)
         {
-            var newNode = new SinglyLinkedListNode<TDataType> { Value = element, NextNode = null };
+            var newNode = new SinglyLinkedListNode<TDataType>(element) {NextNode = null};
 
             // Handle 1st element of list.
             if (head == null)
@@ -71,7 +71,7 @@ namespace DSLib.DataStructures
 
         public bool InsertAtLast(TDataType element)
         {
-            var newNode = new SinglyLinkedListNode<TDataType> {Value = element, NextNode = null};
+            var newNode = new SinglyLinkedListNode<TDataType>(element) {NextNode = null};
 
             // Handle 1st element of list.
             if (head == null)
@@ -92,13 +92,13 @@ namespace DSLib.DataStructures
 
         public bool InsertAfter(TDataType newElement, TDataType existingElement)
         {
-            var newNode = new SinglyLinkedListNode<TDataType> { Value = newElement, NextNode = null };
+            var newNode = new SinglyLinkedListNode<TDataType>(newElement) {NextNode = null};
 
             current = head;
 
             while (current != null)
             {
-                if (current.Value.Equals(existingElement))
+                if (current.Data.Equals(existingElement))
                 {
                     newNode.NextNode = current.NextNode;
                     current.NextNode = newNode;
@@ -118,17 +118,59 @@ namespace DSLib.DataStructures
 
         public bool DeleteFirst()
         {
-            throw new System.NotImplementedException();
+            head = head.NextNode;
+
+            return true;
         }
 
         public bool DeleteLast()
         {
-            throw new System.NotImplementedException();
+            current = head;
+
+            while (current.NextNode.NextNode != null)
+            {
+                current = current.NextNode;
+            }
+
+            current.NextNode = null;
+
+            return true;
         }
 
         public bool DeleteSpecific(TDataType element)
         {
-            throw new System.NotImplementedException();
+            bool deleted = false;
+
+            // empty-list
+            if (head == null)
+            {
+                return false;
+            }
+
+            // First element itself to be deleted
+            if (head.Data.Equals(element))
+            {
+                head = null;
+                return true;
+            }
+
+            var prev = head;
+            current = head.NextNode;
+
+            while (prev != null && current != null)
+            {
+                if (current.Data.Equals(element))
+                {
+                    prev.NextNode = current.NextNode;
+                    deleted = true;
+                    break;
+                }
+
+                prev = prev.NextNode;
+                current = current.NextNode;
+            }
+
+            return deleted;
         }
     }
 }

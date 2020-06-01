@@ -41,16 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataStructures\BaseNode.cs" />
     <Compile Include="DataStructures\DataStructureFactory.cs" />
     <Compile Include="Interfaces\IApplication.cs" />
     <Compile Include="Interfaces\IDataStructureFactory.cs" />
     <Compile Include="Interfaces\IHandleOutput.cs" />
     <Compile Include="DsAndOperationMapper.cs" />
     <Compile Include="Enums\DataStructureTypes.cs" />
-    <Compile Include="DsContext.cs" />
     <Compile Include="Enums\Operations.cs" />
     <Compile Include="Interfaces\IMapDsAndOperations.cs" />
-    <Compile Include="Interfaces\IDsContext.cs" />
     <Compile Include="Interfaces\IDataStructure.cs" />
     <Compile Include="Interfaces\IPrintMenu.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

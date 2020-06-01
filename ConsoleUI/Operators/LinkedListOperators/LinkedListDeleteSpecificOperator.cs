@@ -1,4 +1,5 @@
-﻿using ConsoleUI.ConsoleIOInterface;
+﻿using System;
+using ConsoleUI.ConsoleIOInterface;
 using DSLib;
 
 namespace ConsoleUI.Operators
@@ -12,7 +13,12 @@ namespace ConsoleUI.Operators
 
         public void Operate()
         {
-            
+            string inputData = userInterface.GetSingleStringByUser("Enter data to delete: ");
+
+            var element = (TDataType)Convert.ChangeType(inputData, typeof(TDataType));
+            bool output = dataStructure.DeleteSpecific(element);
+
+            userInterface.DisplayResultMessage(output, $"Node {element} Deleted.", $"Node {element} Deletion failed");
         }
     }
 }
