@@ -1,10 +1,9 @@
 ﻿using System;
-using ConsoleUI.ConsoleIOInterface;
-using DSLib;
+using DSLib.Operators.LinkedListOperators;
 
-namespace ConsoleUI.Operators
+namespace DSLib.Operators
 {
-    internal sealed class OperatorFactory<TDataType> : IOperatorFactory<TDataType>
+    public sealed class OperatorFactory<TDataType> : IOperatorFactory<TDataType>
     {
         private readonly IUserInterface userInterface;
 

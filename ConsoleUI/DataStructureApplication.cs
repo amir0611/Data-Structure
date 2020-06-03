@@ -1,7 +1,7 @@
 ﻿using System;
 using ConsoleUI.ConsoleIOInterface;
-using ConsoleUI.Operators;
 using DSLib;
+using DSLib.Operators;
 
 namespace ConsoleUI
 {

@@ -1,8 +1,6 @@
 ﻿using System.Collections.Generic;
-using ConsoleUI.ConsoleIOInterface;
-using DSLib;
 
-namespace ConsoleUI.Operators
+namespace DSLib.Operators.LinkedListOperators
 {
     internal sealed class LinkedListCreateOperator<TDataType> : BaseOperator<TDataType>, IOperate
     {

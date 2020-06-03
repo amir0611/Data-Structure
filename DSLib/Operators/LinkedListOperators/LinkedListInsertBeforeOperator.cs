@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Linq;
-using ConsoleUI.ConsoleIOInterface;
-using DSLib;
 using DSLib.DataStructures;
 
-namespace ConsoleUI.Operators
+namespace DSLib.Operators.LinkedListOperators
 {
     internal class LinkedListInsertBeforeOperator<TDataType> : BaseOperator<TDataType>, IOperate
     {
@@ -22,8 +20,8 @@ namespace ConsoleUI.Operators
                 return;
             }
 
-            var inputData = userInterface.GetFixedLengthListOfStringsByUser(2,
-                "Enter new data to add: ", "Enter Data before which new node will be inserted: ").ToList();
+            var inputData = Enumerable.ToList<string>(userInterface.GetFixedLengthListOfStringsByUser(2,
+                "Enter new data to add: ", "Enter Data before which new node will be inserted: "));
 
             var newElement = (TDataType)Convert.ChangeType(inputData[0], typeof(TDataType));
             var existingElement = (TDataType)Convert.ChangeType(inputData[1], typeof(TDataType));

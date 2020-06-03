@@ -1,8 +1,6 @@
 ﻿using System;
-using ConsoleUI.ConsoleIOInterface;
-using DSLib;
 
-namespace ConsoleUI.Operators
+namespace DSLib.Operators
 {
     internal abstract class BaseOperator<TDataType>
     {

@@ -44,23 +44,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataStructureApplication.cs" />
-    <Compile Include="Operators\LinkedListOperators\LinkedListDeleteFirstOperator.cs" />
-    <Compile Include="Operators\LinkedListOperators\LinkedListDeleteLastOperator.cs" />
-    <Compile Include="Operators\LinkedListOperators\LinkedListDeleteSpecificOperator.cs" />
-    <Compile Include="Operators\LinkedListOperators\LinkedListInsertBeforeOperator.cs" />
-    <Compile Include="Operators\LinkedListOperators\LinkedListInsertAtLastOperator.cs" />
-    <Compile Include="Operators\LinkedListOperators\LinkedListInsertAtFrontOperator.cs" />
-    <Compile Include="Operators\LinkedListOperators\LinkedListFindOperator.cs" />
     <Compile Include="ConsoleIOInterface\ConsoleBasedUI.cs" />
-    <Compile Include="ConsoleIOInterface\IUserInterface.cs" />
     <Compile Include="ConsoleIOInterface\ConsoleDisplayFormatter.cs" />
-    <Compile Include="Operators\BaseOperator.cs" />
-    <Compile Include="Operators\LinkedListOperators\LinkedListCreateOperator.cs" />
-    <Compile Include="Operators\IOperate.cs" />
-    <Compile Include="Operators\IOperatorFactory.cs" />
-    <Compile Include="Operators\LinkedListOperators\LinkedListInsertAfterOperator.cs" />
-    <Compile Include="Operators\LinkedListOperators\LinkedListTraversalOperator.cs" />
-    <Compile Include="Operators\OperatorFactory.cs" />
     <Compile Include="ConsoleProgram.cs" />
     <Compile Include="ConsoleIOInterface\ConsoleMenuPrinter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -74,6 +59,8 @@
       <Name>DSLib</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Operators\LinkedListOperators\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

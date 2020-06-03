@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ConsoleUI.ConsoleIOInterface
+namespace DSLib
 {
-    internal interface IUserInterface
+    public interface IUserInterface
     {
         object GetEnumBasedInputByUser(Type enumType);
 

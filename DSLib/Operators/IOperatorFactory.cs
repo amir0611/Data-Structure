@@ -1,8 +1,6 @@
-﻿using DSLib;
-
-namespace ConsoleUI.Operators
+﻿namespace DSLib.Operators
 {
-    internal interface IOperatorFactory<TDataType>
+    public interface IOperatorFactory<TDataType>
     {
         IOperate GetOperator(DataStructureTypes dataStructure,
             IDataStructure<TDataType> dataStructureInstance, object operation);

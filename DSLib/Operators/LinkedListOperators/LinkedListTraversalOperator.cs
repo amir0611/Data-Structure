@@ -1,7 +1,4 @@
-﻿using ConsoleUI.ConsoleIOInterface;
-using DSLib;
-
-namespace ConsoleUI.Operators
+﻿namespace DSLib.Operators.LinkedListOperators
 {
     internal sealed class LinkedListTraversalOperator<TData> : BaseOperator<TData>, IOperate
     {
