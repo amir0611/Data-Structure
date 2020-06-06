@@ -1,6 +1,9 @@
-﻿namespace DSLib
+﻿using System;
+
+namespace DSLib
 {
-    public enum DataStructureTypes : ushort
+    [Flags]
+    public enum DataStructureTypes 
     {
         Array = 1,
         SinglyLinkedList,

@@ -17,3 +17,5 @@
 /ConsoleUI/obj
 *.DotSettings
 /DSLib/obj
+/packages
+/DSLib/bin/Debug

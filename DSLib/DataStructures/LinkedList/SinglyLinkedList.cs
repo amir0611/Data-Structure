@@ -9,6 +9,11 @@ namespace DSLib.DataStructures
 
         public bool Create(IEnumerable<TDataType> data)
         {
+            if (data is null)
+            {
+                throw new System.ArgumentNullException(nameof(data));
+            }
+
             var created = false;
 
             foreach (TDataType item in data)

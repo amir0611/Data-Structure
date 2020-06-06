@@ -1,6 +1,9 @@
-﻿namespace DSLib
+﻿using System;
+
+namespace DSLib
 {
-    public enum ArrayOperations : ushort
+    [Flags]
+    public enum ArrayOperations 
     {
         Recursion = 1
     }
