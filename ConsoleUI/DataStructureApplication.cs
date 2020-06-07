@@ -1,5 +1,4 @@
 ﻿using System;
-using ConsoleUI.ConsoleIOInterface;
 using DSLib;
 using DSLib.Operators;
 
@@ -20,7 +19,7 @@ namespace ConsoleUI
         {
             this.menuPrinter = menuPrinter ?? throw new ArgumentNullException(nameof(menuPrinter));
             this.userInterface = userInterface ?? throw new ArgumentNullException(nameof(userInterface));
-            this.dsAndOperationsMapper =  dsAndOperationsMapper ?? throw new ArgumentNullException(nameof(dsAndOperationsMapper));
+            this.dsAndOperationsMapper = dsAndOperationsMapper ?? throw new ArgumentNullException(nameof(dsAndOperationsMapper));
             this.dataStructureFactory = dataStructureFactory ?? throw new ArgumentNullException(nameof(dataStructureFactory));
             this.operatorFactory = operatorFactory ?? throw new ArgumentNullException(nameof(operatorFactory));
         }
@@ -57,15 +56,15 @@ namespace ConsoleUI
 
         private DataStructureTypes SelectDataStructure()
         {
-            menuPrinter.ShowEnumBasedTabularMenu(typeof(DataStructureTypes), new[] {"Index", "DS Type"});
+            menuPrinter.ShowEnumBasedTabularMenu(typeof(DataStructureTypes), new[] { "Index", "DS Type" });
 
-            return (DataStructureTypes) userInterface.GetEnumBasedInputByUser(typeof(DataStructureTypes));
+            return (DataStructureTypes)userInterface.GetEnumBasedInputByUser(typeof(DataStructureTypes));
         }
 
         private object SelectOperation(DataStructureTypes dataStructure)
         {
             Type operationType = dsAndOperationsMapper.GetOperationType(dataStructure);
-            menuPrinter.ShowEnumBasedTabularMenu(operationType, new[] {"Index", "Operation"});
+            menuPrinter.ShowEnumBasedTabularMenu(operationType, new[] { "Index", "Operation" });
 
             return userInterface.GetEnumBasedInputByUser(operationType);
         }

@@ -18,7 +18,7 @@ namespace ConsoleUI.ConsoleIOInterface
             ConsoleDisplayFormatter.PrintLine();
 
             var index = 0;
-            foreach (ushort item in enumValues)
+            foreach (int item in enumValues)
             {
                 ConsoleDisplayFormatter.PrintRow(item.ToString(), enumNames[index++]);
             }

@@ -59,7 +59,7 @@ namespace DSLib.DataStructures
 
         public bool InsertAtFront(TDataType element)
         {
-            var newNode = new SinglyLinkedListNode<TDataType>(element) {NextNode = null};
+            var newNode = new SinglyLinkedListNode<TDataType>(element) { NextNode = null };
 
             // Handle 1st element of list.
             if (head == null)
@@ -76,7 +76,7 @@ namespace DSLib.DataStructures
 
         public bool InsertAtLast(TDataType element)
         {
-            var newNode = new SinglyLinkedListNode<TDataType>(element) {NextNode = null};
+            var newNode = new SinglyLinkedListNode<TDataType>(element) { NextNode = null };
 
             // Handle 1st element of list.
             if (head == null)
@@ -97,7 +97,7 @@ namespace DSLib.DataStructures
 
         public bool InsertAfter(TDataType newElement, TDataType existingElement)
         {
-            var newNode = new SinglyLinkedListNode<TDataType>(newElement) {NextNode = null};
+            var newNode = new SinglyLinkedListNode<TDataType>(newElement) { NextNode = null };
 
             current = head;
 

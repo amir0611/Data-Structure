@@ -13,7 +13,7 @@ namespace DSLib.Operators.LinkedListOperators
         {
             var inputData = userInterface.GetListOfStringsByUser("Enter Data: ");
 
-            bool output = dataStructure.Create((IEnumerable<TDataType>) inputData);
+            bool output = dataStructure.Create((IEnumerable<TDataType>)inputData);
 
             userInterface.DisplayResultMessage(output, "Linked List created successfully.", "Creation Failed.");
         }

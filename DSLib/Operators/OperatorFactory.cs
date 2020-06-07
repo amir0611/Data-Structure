@@ -22,7 +22,7 @@ namespace DSLib.Operators
                 case DataStructureTypes.SinglyLinkedList:
                 case DataStructureTypes.DoublyLinkedList:
                 case DataStructureTypes.CircularLinkedList:
-                    return GetLinkedListOperationsHandler(dataStructureInstance, (LinkedListOperations) operation);
+                    return GetLinkedListOperationsHandler(dataStructureInstance, (LinkedListOperations)operation);
                 case DataStructureTypes.Stack:
                     break;
                 case DataStructureTypes.Queue:

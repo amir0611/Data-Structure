@@ -47,7 +47,7 @@ namespace DSLib
         {
             if (!Enum.IsDefined(typeof(DataStructureTypes), dataStructure))
             {
-                throw new InvalidEnumArgumentException(nameof(dataStructure), (int) dataStructure,
+                throw new InvalidEnumArgumentException(nameof(dataStructure), (int)dataStructure,
                     typeof(DataStructureTypes));
             }
 

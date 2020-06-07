@@ -3,12 +3,13 @@
 namespace DSLib
 {
     [Flags]
-    public enum ArrayOperations 
+    public enum ArrayOperations
     {
         Recursion = 1
     }
 
-    public enum LinkedListOperations : ushort
+    [Flags]
+    public enum LinkedListOperations
     {
         Create = 1,
         Traversal,
@@ -22,22 +23,26 @@ namespace DSLib
         DeleteSpecific
     }
 
-    public enum StackOperations : ushort
+    [Flags]
+    public enum StackOperations
     {
         Push = 1
     }
 
-    public enum QueueOperations : ushort
+    [Flags]
+    public enum QueueOperations
     {
         Enqueue = 1
     }
 
-    public enum GraphOperations : ushort
+    [Flags]
+    public enum GraphOperations
     {
         Traversal = 1
     }
 
-    public enum TreeOperations : ushort
+    [Flags]
+    public enum TreeOperations
     {
         Traversal = 1
     }

@@ -8,9 +8,9 @@ namespace ConsoleUI.ConsoleIOInterface
     {
         public object GetEnumBasedInputByUser(Type enumType)
         {
-            var maxAllowedValue = (ushort) Enum.GetNames(enumType).Length;
+            var maxAllowedValue = Enum.GetNames(enumType).Length;
 
-            ushort userInput = GetIntegerUserInput(maxAllowedValue);
+            int userInput = GetIntegerUserInput(maxAllowedValue);
 
             return Enum.Parse(enumType, Enum.GetName(enumType, userInput) ?? throw new InvalidOperationException());
         }
@@ -82,9 +82,9 @@ namespace ConsoleUI.ConsoleIOInterface
             Console.Write("NULL\n\n\n");
         }
 
-        private static ushort GetIntegerUserInput(ushort maxAllowedValue)
+        private static int GetIntegerUserInput(int maxAllowedValue)
         {
-            ushort userInput = 0;
+            int userInput = 0;
 
             do
             {

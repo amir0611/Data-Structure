@@ -3,7 +3,7 @@
 namespace DSLib
 {
     [Flags]
-    public enum DataStructureTypes 
+    public enum DataStructureTypes
     {
         Array = 1,
         SinglyLinkedList,

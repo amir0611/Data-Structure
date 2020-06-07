@@ -9,7 +9,7 @@ namespace DSLib.DataStructures
         {
             if (!Enum.IsDefined(typeof(DataStructureTypes), selectedDataStructure))
             {
-                throw new InvalidEnumArgumentException(nameof(selectedDataStructure), (int) selectedDataStructure,
+                throw new InvalidEnumArgumentException(nameof(selectedDataStructure), (int)selectedDataStructure,
                     typeof(DataStructureTypes));
             }
 
